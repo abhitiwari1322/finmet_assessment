@@ -1,0 +1,60 @@
+<style>
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6rem;
+    padding: 0 1rem;
+  }
+
+  .hero h1 {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  .hero p {
+    text-align: center;
+    margin-top: 1rem;
+    color: #444;
+  }
+
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    background: #0366d6;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .btn.secondary {
+    background: #e6eef8;
+    color: #0b2540;
+  }
+
+  .btn:hover { opacity: 0.95; }
+</style>
+
+<div class="hero">
+  <h1>Welcome to Badminton League!</h1>
+  <div>
+    <p>Your one-stop destination for all things badminton.</p>
+  </div>
+
+  <div class="actions">
+    <%= link_to "View players", players_path, class: "btn" %>
+    <%= link_to "View matches", matches_path, class: "btn secondary" %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+*/
+
+/* Inline form used for delete buttons in table rows */
+.inline-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.inline-form input[type="submit"] {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.inline-form input[type="submit"]:hover {
+  text-decoration: underline;
+}
