@@ -1,0 +1,51 @@
+<h1>Badminton League</h1>
+
+<%= link_to "Add Player", new_player_path, type: "button" %> |
+<%= link_to "Record Match", new_match_path, type: "button" %> |
+<%= link_to "Match History", matches_path, type: "button" %> |
+<%= link_to "Back to Home", root_path, type: "button" %>
+
+<table border="1" class="table-view">
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Wins</th>
+    <th>Losses</th>
+    <th></th>
+  </tr>
+
+  <% @ranked_players.each do |ranked_player| %>
+    <% player = ranked_player[:player] %>
+    <tr>
+      <td><%= ranked_player[:rank] %></td>
+      <td><%= player.name %></td>
+      <td><%= player.wins %></td>
+      <td><%= player.losses %></td>
+      <td>
+        <%= button_to "Delete", player_path(player),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              form: { class: "inline-form" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<style>
+  .table-view {
+    
+    width: 50%;
+    border-collapse: collapse;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+  }
+  .table-view th, .table-view td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+  .table-view th {
+    background-color: #f0f0f0;
+  }
+  .table-view tr:hover {
+    background-color: #f5f5f5;
+  }
+</style>

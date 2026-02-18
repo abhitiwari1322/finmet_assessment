@@ -1,0 +1,30 @@
+<h1>Match History</h1>
+
+<%= link_to "Back to Home", root_path, type: "button" %>
+<%= link_to "Record Match", new_match_path, type: "button" %>
+
+<table border="1" class="table-view">
+
+  <% if @matches.length > 0 %>
+    <tr>
+      <th>Winner</th>
+      <th>Loser</th>
+    </tr>
+    <% @matches.each do |match| %>
+      <tr>
+        <td><%= match.winner.name %></td>
+        <td><%= match.loser.name %></td>
+      </tr>
+    <% end %>
+  <% else %>
+        <p>No matches recorded yet.</p>
+  <% end %>
+</table>
+<style>
+  .table-view {
+    width: 50%;
+    border-collapse: collapse;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+  }
+</style>
